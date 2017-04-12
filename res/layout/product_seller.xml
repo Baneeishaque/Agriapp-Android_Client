@@ -8,30 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.myproject.Activityproduct" >
 
-    <ImageView
-        android:id="@+id/img1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_launcher" />
-
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/img1"
-        android:layout_centerHorizontal="true"
-        android:text="Kuruva" />
-
     <TextView
         android:id="@+id/txt_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/img1"
-        android:layout_below="@+id/img1"
         android:layout_marginTop="44dp"
         android:text="Unit Cost" />
 
@@ -45,12 +25,22 @@
         android:text="Minimum Quantity" />
 
     <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/cost"
+        android:layout_alignLeft="@+id/txt_content"
+        android:layout_marginBottom="21dp"
+        android:text="Kuruva" />
+
+    <TextView
         android:id="@+id/quantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/cost"
+        android:layout_marginLeft="56dp"
+        android:layout_toRightOf="@+id/textView3"
         android:text="25" />
 
     <TextView
@@ -58,8 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView3"
-        android:layout_marginLeft="24dp"
-        android:layout_toRightOf="@+id/name"
+        android:layout_alignRight="@+id/quantity"
         android:text="150" />
 
 </RelativeLayout>

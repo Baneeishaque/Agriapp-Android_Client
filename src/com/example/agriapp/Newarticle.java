@@ -71,16 +71,16 @@ public class Newarticle extends Activity {
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-					Toast.makeText(Newarticle.this,response, Toast.LENGTH_LONG).show();
+//					Toast.makeText(Newarticle.this,response, Toast.LENGTH_LONG).show();
 					pd.dismiss();
 					if(response.equals("Add blog successfully"))
 					{
-						Toast.makeText(Newarticle.this,"notification added successfully!", Toast.LENGTH_LONG).show();
+						Toast.makeText(Newarticle.this,"Add blog successfully!", Toast.LENGTH_LONG).show();
 						//clear(v);
 					}
 					else
 					{
-						Toast.makeText(Newarticle.this,"notification addition failure!", Toast.LENGTH_LONG).show();
+						Toast.makeText(Newarticle.this,"Add blog failure!", Toast.LENGTH_LONG).show();
 					}
 				}
 			});

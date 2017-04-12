@@ -65,7 +65,7 @@ public class Farmer_Accessory_View extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
-	public void seller(View v)
+	public void supplier(View v)
     {
     	Intent i = new Intent(getApplicationContext(),Supplierdetails.class);
     	i.putExtra("notification_id",getIntent().getStringExtra("supplierid"));

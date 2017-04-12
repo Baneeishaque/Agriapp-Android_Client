@@ -91,6 +91,7 @@ public class Farmermachineview extends Activity {
 	public void supplier(View v)
     {
     	Intent i = new Intent(getApplicationContext(),Supplierdetails.class);
+    	i.putExtra("notification_id",getIntent().getStringExtra("supplier_id"));
       	startActivity(i);
     }
 }

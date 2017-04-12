@@ -117,6 +117,17 @@ public class Myarticle_edit extends Activity {
 		startActivity(i);
 
 	}
+	
+	public void del(View v)
+	{
+    	Intent i = new Intent(this, Blog3.class);
+    	i.putExtra("title", txt_title.getText().toString());
+    	i.putExtra("content", txt_content.getText().toString());
+    	i.putExtra("date", txt_date.getText().toString());
+
+		startActivity(i);
+
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -8,26 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.myproject.Activitysellerprofile" >
 
-    <ImageView
-        android:id="@+id/img1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="30dp"
-        android:layout_toRightOf="@+id/txt_name"
-        android:src="@drawable/ic_launcher" />
-
-    <TextView
-        android:id="@+id/txt_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/img1"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="14dp"
-        android:text="Add User Profile Here:" />
-
     <EditText
         android:id="@+id/name"
         android:layout_width="wrap_content"
@@ -42,7 +22,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/img1"
         android:layout_marginLeft="18dp"
         android:layout_marginTop="34dp"
         android:text="Name:" />

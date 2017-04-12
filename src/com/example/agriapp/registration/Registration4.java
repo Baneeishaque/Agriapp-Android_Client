@@ -40,7 +40,7 @@ public class Registration4 extends Activity {
 		name=(EditText) findViewById(R.id.name);
 		address=(EditText) findViewById(R.id.address);
 		contact=(EditText) findViewById(R.id.contact);
-		category=(EditText) findViewById(R.id.contact);
+		category=(EditText) findViewById(R.id.category);
 
 	}
 
