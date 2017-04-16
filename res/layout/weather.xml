@@ -12,35 +12,63 @@
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        
-        android:layout_marginTop="45dp"
-        android:text="Date:" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-       
-        android:layout_below="@+id/txt_content"
-        android:layout_marginTop="43dp"
-        android:text="Minimum Temperature:" />
-
-    <TextView
-        android:id="@+id/txt_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="39dp"
-        android:text="Maximum Temperature:" />
+        android:layout_alignLeft="@+id/txt_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="Time" />
 
     <TextView
         android:id="@+id/txt_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/txt_name"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="18dp"
         android:text="Location:" />
+
+    <TextView
+        android:id="@+id/txt_water"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txt_content"
+        android:layout_alignBottom="@+id/txt_content"
+        android:layout_toRightOf="@+id/textView3"
+        android:text="Ponnani" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txt_content"
+        android:layout_toRightOf="@+id/textView3"
+        android:text="23/09/2014" />
+
+    <TextView
+        android:id="@+id/TextView_cor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_water"
+        android:layout_below="@+id/txt_water"
+        android:layout_marginTop="16dp"
+        android:text="Maximum Temperature:" />
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView_cor"
+        android:layout_below="@+id/TextView_cor"
+        android:layout_marginTop="16dp"
+        android:text="Maximum Temperature:" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txt_title"
+        android:layout_marginTop="24dp"
+        android:text="Temperature:" />
 
     <TextView
         android:id="@+id/txt_temp"
@@ -48,33 +76,79 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/txt_water"
+        android:layout_centerHorizontal="true"
         android:text="27 degree" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/txt_content"
-        android:layout_marginLeft="18dp"
-        android:layout_toRightOf="@+id/txt_title"
-        android:text="23/09/2014" />
-
-    <TextView
-        android:id="@+id/txt_water"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView3"
-        android:layout_alignLeft="@+id/textView5"
-        android:text="Edappal" />
 
     <TextView
         android:id="@+id/txt_soil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/txt_title"
         android:layout_alignLeft="@+id/txt_temp"
-        android:layout_alignTop="@+id/txt_title"
+        android:layout_below="@+id/txt_temp"
+        android:layout_marginTop="18dp"
         android:text="30 degree" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txt_soil"
+        android:layout_alignBottom="@+id/txt_soil"
+        android:layout_toLeftOf="@+id/txt_title"
+        android:text="Pressure" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txt_soil"
+        android:layout_below="@+id/txt_soil"
+        android:layout_marginTop="29dp"
+        android:text="30 degree" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView03"
+        android:layout_alignBottom="@+id/TextView03"
+        android:layout_toRightOf="@+id/txt_name"
+        android:text="Humidity" />
+
+    <TextView
+        android:id="@+id/TextView06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView07"
+        android:layout_alignBottom="@+id/TextView07"
+        android:layout_alignLeft="@+id/TextView03"
+        android:text="30 degree" />
+
+    <TextView
+        android:id="@+id/TextView07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/TextView02"
+        android:layout_below="@+id/TextView02"
+        android:layout_marginTop="19dp"
+        android:text="Wind" />
+
+    <TextView
+        android:id="@+id/TextView04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView06"
+        android:layout_below="@+id/TextView06"
+        android:layout_marginTop="36dp"
+        android:text="30 degree" />
+
+    <TextView
+        android:id="@+id/TextView05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView04"
+        android:layout_alignBottom="@+id/TextView04"
+        android:layout_alignRight="@+id/TextView07"
+        android:text="Sun" />
 
 </RelativeLayout>

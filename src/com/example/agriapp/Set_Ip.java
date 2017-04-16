@@ -21,7 +21,7 @@ public class Set_Ip extends Activity {
 
 		button_save = (Button) findViewById(R.id.buttonlike);
 		edittext_ip = (EditText) findViewById(R.id.editText1);
-		edittext_ip.setText("192.168.1.4");
+		edittext_ip.setText("192.168.43.122");
 
 		button_save.setOnClickListener(new View.OnClickListener() {
 
@@ -44,7 +44,7 @@ public class Set_Ip extends Activity {
 						
 						//true for localhost/php, false for localhost
 
-						General_Data.generate_application_address(ip, true);
+						General_Data.generate_application_address(ip, false);
 
 						Intent i = new Intent(getApplicationContext(), Launcher.class);
 						startActivity(i);
