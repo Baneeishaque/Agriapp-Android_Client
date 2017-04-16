@@ -41,8 +41,10 @@ public class Set_Ip extends Activity {
 						// Editor ed = sh.edit();
 						// ed.putString("ipad", ip);
 						// ed.commit();
+						
+						//true for localhost/php, false for localhost
 
-						General_Data.SERVER_APPLICATION_ADDRESS = ip;
+						General_Data.generate_application_address(ip, true);
 
 						Intent i = new Intent(getApplicationContext(), Launcher.class);
 						startActivity(i);

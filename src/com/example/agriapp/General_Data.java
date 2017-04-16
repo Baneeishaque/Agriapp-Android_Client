@@ -5,8 +5,18 @@ package com.example.agriapp;
  */
 
 public class General_Data {
-    public static String TAG="Agriapp Studio";
-    public static String SERVER_IP_ADDRESS ="192.168.1.4";
-    public static String SERVER_APPLICATION_ADDRESS =SERVER_IP_ADDRESS+"/php";
-    public static String SHARED_PREFERENCE = "Agriapp_Studio";
+	public static String TAG = "Agriapp Studio";
+
+	public static String SHARED_PREFERENCE = "Agriapp_Studio";
+
+	public static String SERVER_APPLICATION_ADDRESS;
+
+	public static void generate_application_address(String ip, Boolean status) {
+		if (status) {
+			SERVER_APPLICATION_ADDRESS = ip + "/php";
+		} else {
+			SERVER_APPLICATION_ADDRESS = ip;
+		}
+	}
+
 }
