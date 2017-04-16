@@ -16,7 +16,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:onClick="addnew"
-        android:text="Add New Accessory" />
+        android:text="Add New Machine" />
 
     <Button
         android:id="@+id/button2"
@@ -50,5 +50,16 @@
         android:layout_marginTop="24dp"
         android:onClick="chat"
         android:text="chat inbox" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="24dp"
+        android:onClick="add"
+        android:text="ADD NEW ACCESSORY" />
 
 </RelativeLayout>

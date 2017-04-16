@@ -51,4 +51,22 @@
         android:layout_alignRight="@+id/quantity"
         android:text="150" />
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:onClick="del"
+        android:text="Delete" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/quantity"
+        android:layout_alignTop="@+id/button1"
+        android:onClick="edit"
+        android:text="Edit" />
+
 </RelativeLayout>

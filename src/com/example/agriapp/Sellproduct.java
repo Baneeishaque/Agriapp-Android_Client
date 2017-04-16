@@ -17,16 +17,15 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Sellproduct extends Activity {
-	
-	EditText prod,cost,min;
+
+	EditText prod, cost, min;
 	ImageView pic1;
 	ProgressDialog pd;
 	View v;
@@ -34,74 +33,70 @@ public class Sellproduct extends Activity {
 	HttpPost httpost;
 	ArrayList<NameValuePair> nvp;
 	String response;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sellproduct);
-		prod=(EditText) findViewById(R.id.name);
-		cost=(EditText) findViewById(R.id.cost);
-		min=(EditText) findViewById(R.id.office);
-		pic1=(ImageView) findViewById(id.img1);
+		prod = (EditText) findViewById(R.id.name);
+		cost = (EditText) findViewById(R.id.cost);
+		min = (EditText) findViewById(R.id.office);
+		pic1 = (ImageView) findViewById(id.img1);
 	}
 
-	public void save(View v)
-	{
-		pd=ProgressDialog.show(this,"", "Adding Product...");
+	public void save(View v) {
+		pd = ProgressDialog.show(this, "", "Adding Product...");
 		new Thread(new Runnable() {
 			public void run() {
 				sellprod();
-				
+
 			}
 
-			
 		}).start();
 	}
+
 	private void sellprod() {
 		// TODO Auto-generated method stub
-		try
-		{
-			httpcnt=new DefaultHttpClient();
-			httpost=new HttpPost("http://"+General_Data.SERVER_APPLICATION_ADDRESS+"/agriappserver/android/addproduct.php");
-			nvp=new ArrayList<NameValuePair>(6);
-			nvp.add(new BasicNameValuePair("name",prod.getText().toString()));
-			nvp.add(new BasicNameValuePair("unit_cost",cost.getText().toString()));
-			nvp.add(new BasicNameValuePair("minimum_quantity",min.getText().toString()));
-			nvp.add(new BasicNameValuePair("pic1","0"));
-			nvp.add(new BasicNameValuePair("pic2","0"));
-			nvp.add(new BasicNameValuePair("pic3","0"));
-			 SharedPreferences settings = getApplicationContext().getSharedPreferences(General_Data.SHARED_PREFERENCE,
-		                Context.MODE_PRIVATE);
-	            nvp.add(new BasicNameValuePair("seller_id", settings.getString("user_id","0")));
+		try {
+			httpcnt = new DefaultHttpClient();
+			httpost = new HttpPost(
+					"http://" + General_Data.SERVER_APPLICATION_ADDRESS + "/agriappserver/android/addproduct.php");
+			nvp = new ArrayList<NameValuePair>(6);
+			nvp.add(new BasicNameValuePair("name", prod.getText().toString()));
+			nvp.add(new BasicNameValuePair("unit_cost", cost.getText().toString()));
+			nvp.add(new BasicNameValuePair("minimum_quantity", min.getText().toString()));
+			nvp.add(new BasicNameValuePair("pic1", "0"));
+			nvp.add(new BasicNameValuePair("pic2", "0"));
+			nvp.add(new BasicNameValuePair("pic3", "0"));
+			SharedPreferences settings = getApplicationContext().getSharedPreferences(General_Data.SHARED_PREFERENCE,
+					Context.MODE_PRIVATE);
+			nvp.add(new BasicNameValuePair("seller_id", settings.getString("user_id", "0")));
 
 			httpost.setEntity(new UrlEncodedFormEntity(nvp));
-			ResponseHandler<String> s=new BasicResponseHandler();
-			response=httpcnt.execute(httpost,s);
+			ResponseHandler<String> s = new BasicResponseHandler();
+			response = httpcnt.execute(httpost, s);
 			runOnUiThread(new Runnable() {
-				
+
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-					//Toast.makeText(Addcrop.this,response, Toast.LENGTH_LONG).show();
+
+					Log.d(General_Data.TAG, response);
 					pd.dismiss();
-					if(response.equals("product add successfully"))
-					{
-						Toast.makeText(Sellproduct.this,"Product added successfully!", Toast.LENGTH_LONG).show();
-					}
-					else
-					{
-						Toast.makeText(Sellproduct.this,"Product addition failure!", Toast.LENGTH_LONG).show();
+					if (response.equals("0")) {
+						Toast.makeText(Sellproduct.this, "Product added successfully!", Toast.LENGTH_LONG).show();
+					} else {
+						Toast.makeText(Sellproduct.this, "Product addition failure!", Toast.LENGTH_LONG).show();
 					}
 				}
 			});
-		}
-		catch(final Exception e)
-		{
+		} catch (final Exception e) {
 			runOnUiThread(new Runnable() {
-				
+
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-					Toast.makeText(Sellproduct.this,"error"+e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+					Toast.makeText(Sellproduct.this, "error" + e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 					pd.dismiss();
 				}
 			});

@@ -38,6 +38,7 @@ public class Labour extends Activity {
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			Intent i=new Intent(Labour.this,Login.class);
+			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(i);
 			return true;
 		}

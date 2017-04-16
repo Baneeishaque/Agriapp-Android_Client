@@ -15,7 +15,7 @@
         android:allowBackup="true"
         android:icon="@drawable/unnamed"
         android:label="Agrimobile"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Light" >
         <activity
             android:name=".homes.Login"
             android:label="Sign in" >
@@ -309,6 +309,18 @@
         <activity
             android:name=".Supplierdetails"
             android:label="@string/title_activity_supplierdetails" >
+        </activity>
+        <activity
+            android:name=".Listofsellers"
+            android:label="@string/title_activity_listofsellers" >
+        </activity>
+        <activity
+            android:name=".Sellproduct_edit"
+            android:label="@string/title_activity_sellproduct_edit" >
+        </activity>
+        <activity
+            android:name=".Addaccessory"
+            android:label="@string/title_activity_addaccessory" >
         </activity>
     </application>
 

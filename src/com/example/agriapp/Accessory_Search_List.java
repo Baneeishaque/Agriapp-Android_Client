@@ -41,8 +41,7 @@ public class Accessory_Search_List extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.accessory_search_result);
 		role=getIntent().getStringExtra("role");
-//		Toast.makeText(getApplicationContext(),getIntent().getStringExtra
-//		         ("role"), Toast.LENGTH_LONG).show();
+
 
 		list_notifications=(ListView) findViewById(R.id.listView1);
 		SharedPreferences settings = getApplicationContext().getSharedPreferences(General_Data.SHARED_PREFERENCE,
@@ -109,8 +108,7 @@ public class Accessory_Search_List extends Activity {
                 list_notifications.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                    	Toast.makeText(getApplicationContext(), "Search", Toast
-//                                .LENGTH_LONG).show();
+
                     	if(role.equals("Machines")) 
                     	{
                     		Intent i=new Intent(getApplicationContext(),Farmermachineview.class);
@@ -148,22 +146,5 @@ public class Accessory_Search_List extends Activity {
 
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.accessorysearch, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+	
 }

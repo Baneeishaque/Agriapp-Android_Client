@@ -14,8 +14,6 @@ import org.json.JSONException;
 
 import com.example.agriapp.General_Data;
 import com.example.agriapp.R;
-import com.example.agriapp.R.id;
-import com.example.agriapp.R.layout;
 import com.example.agriapp.registration.Registration;
 
 import android.app.Activity;
@@ -25,12 +23,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 public class Login extends Activity {

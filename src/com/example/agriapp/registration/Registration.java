@@ -30,7 +30,7 @@ public class Registration extends Activity {
 		setContentView(R.layout.registration);
 		ArrayAdapter<String> roleadapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,role);
 		roleadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		s1=(Spinner) findViewById(R.id.spinner1);
+		s1=(Spinner) findViewById(R.id.spinner_crop);
 		s1.setAdapter(roleadapter);
 		txt_username=(EditText) findViewById(R.id.user);
 		txt_password=(EditText) findViewById(R.id.passwd);

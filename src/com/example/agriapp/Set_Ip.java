@@ -35,14 +35,14 @@ public class Set_Ip extends Activity {
 				} else {
 					String[] spl = ip.split("\\.");
 					if (spl.length == 4) {
-						// // globally saving the value of ip into ipad
+						// globally saving the value of ip into ipad
 						// SharedPreferences sh = PreferenceManager
 						// .getDefaultSharedPreferences(getApplicationContext());
 						// Editor ed = sh.edit();
 						// ed.putString("ipad", ip);
 						// ed.commit();
 
-						General_Data.SERVER_IP_ADDRESS = ip;
+						General_Data.SERVER_APPLICATION_ADDRESS = ip;
 
 						Intent i = new Intent(getApplicationContext(), Launcher.class);
 						startActivity(i);

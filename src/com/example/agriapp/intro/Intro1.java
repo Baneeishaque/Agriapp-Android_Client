@@ -1,14 +1,10 @@
 package com.example.agriapp.intro;
 
 import com.example.agriapp.R;
-import com.example.agriapp.R.id;
-import com.example.agriapp.R.layout;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 
 public class Intro1 extends Activity {

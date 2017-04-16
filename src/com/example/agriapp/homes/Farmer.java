@@ -10,13 +10,11 @@ import com.example.agriapp.Consultengg;
 import com.example.agriapp.Find_Accessories;
 import com.example.agriapp.General_Data;
 import com.example.agriapp.Laboursearch;
+import com.example.agriapp.Listofsellers;
 import com.example.agriapp.Notification;
 import com.example.agriapp.R;
 import com.example.agriapp.Searchcrop;
 import com.example.agriapp.Weather;
-import com.example.agriapp.R.id;
-import com.example.agriapp.R.layout;
-import com.example.agriapp.R.menu;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -58,6 +56,7 @@ public class Farmer extends Activity {
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			Intent i=new Intent(Farmer.this,Login.class);
+			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(i);
 			finish();
 			return true;
@@ -167,6 +166,12 @@ public class Farmer extends Activity {
 	public void labour(View v)
 	{
 			Intent i=new Intent(this,Laboursearch.class);
+			startActivity(i);
+		
+	}
+	public void connect(View v)
+	{
+			Intent i=new Intent(this,Listofsellers.class);
 			startActivity(i);
 		
 	}

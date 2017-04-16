@@ -17,8 +17,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -113,38 +111,78 @@ public class Myarticle_edit extends Activity {
     	i.putExtra("title", txt_title.getText().toString());
     	i.putExtra("content", txt_content.getText().toString());
     	i.putExtra("date", txt_date.getText().toString());
-
+    	i.putExtra("id", getIntent().getStringExtra
+    	        ("notification_id"));
+    	
 		startActivity(i);
 
 	}
 	
 	public void del(View v)
 	{
-    	Intent i = new Intent(this, Blog3.class);
-    	i.putExtra("title", txt_title.getText().toString());
-    	i.putExtra("content", txt_content.getText().toString());
-    	i.putExtra("date", txt_date.getText().toString());
+		pd = ProgressDialog.show(this, "", "Please wait...");
+        new Thread(new Runnable() {
+            public void run() {
+                delete_blog();
 
-		startActivity(i);
+            }
+
+
+        }).start();
 
 	}
+	
+	private void delete_blog() {
+        // TODO Auto-generated method stub
+        try {
+            httpcnt = new DefaultHttpClient();
+            httpost = new HttpPost("http://" + General_Data.SERVER_APPLICATION_ADDRESS +
+                    "/agriappserver/android/deleteblog.php");
+            nvp = new ArrayList<NameValuePair>(1);
+            nvp.add(new BasicNameValuePair("id", getIntent().getStringExtra
+                    ("notification_id")));
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.myarticle_edit, menu);
-		return true;
+
+            httpost.setEntity(new UrlEncodedFormEntity(nvp));
+            ResponseHandler<String> s = new BasicResponseHandler();
+            response = httpcnt.execute(httpost, s);
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    // TODO Auto-generated method stub
+                   // Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                	Log.d(General_Data.TAG, response);
+					pd.dismiss();
+					if(response.equals("0"))
+					{
+						Toast.makeText(getApplicationContext(),"crop added successfully!", Toast.LENGTH_LONG).show();
+						Intent i=new Intent(getApplicationContext(),Myarticle.class);
+						startActivity(i);
+						finish();
+					}
+					else
+					{
+						Toast.makeText(getApplicationContext(),"crop addition failure!", Toast.LENGTH_LONG).show();
+					}
+                    
+                }
+            });
+        } catch (final Exception e) {
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    // TODO Auto-generated method stub
+                    Toast.makeText(getApplicationContext(), "Error : " + e.getLocalizedMessage(), Toast
+                            .LENGTH_LONG).show();
+                    Log.d(General_Data.TAG, e.getLocalizedMessage());
+                    pd.dismiss();
+                }
+            });
+        }
+        
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+	
 }

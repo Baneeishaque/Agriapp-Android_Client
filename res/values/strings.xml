@@ -64,5 +64,8 @@
     <string name="title_activity_labourchatbox2">Labour Chat Details</string>
     <string name="title_activity_sellerdetails">Seller Details</string>
     <string name="title_activity_supplierdetails">Supplier Details</string>
+    <string name="title_activity_listofsellers">List of sellers</string>
+    <string name="title_activity_sellproduct_edit">Sellproduct edit</string>
+    <string name="title_activity_addaccessory">Addaccessory</string>
 
 </resources>

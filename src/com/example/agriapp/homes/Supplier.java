@@ -1,6 +1,7 @@
 package com.example.agriapp.homes;
 
 import com.example.agriapp.Accessorylist;
+import com.example.agriapp.Addaccessory;
 import com.example.agriapp.Addnewaccessory;
 import com.example.agriapp.Labourchatbox;
 import com.example.agriapp.Message;
@@ -26,6 +27,31 @@ public class Supplier extends Activity {
 		setContentView(R.layout.supplier);
 	}
 
+	public void supplier(View v) {
+		Intent i = new Intent(this, Supplierprof.class);
+		startActivity(i);
+
+	}
+
+	public void accessory(View v) {
+		Intent i = new Intent(this, Accessorylist.class);
+		startActivity(i);
+
+	}
+
+	public void addnew(View v) {
+
+		Intent i = new Intent(this, Addnewaccessory.class);
+		startActivity(i);
+
+	}
+
+	public void add(View v) {
+		Intent i = new Intent(this, Addaccessory.class);
+		startActivity(i);
+
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -40,38 +66,19 @@ public class Supplier extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
-			Intent i=new Intent(this,Login.class);
+			Intent i = new Intent(getApplicationContext(), Login.class);
+			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(i);
-			finish();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public void supplier(View v)
-	{
-			Intent i=new Intent(this,Supplierprof.class);
-			startActivity(i);
-		
+
+	public void onBackPressed() {
 	}
-	public void accessory(View v)
-	{
-			Intent i=new Intent(this,Accessorylist.class);
-			startActivity(i);
-		
+
+	public void chat(View v) {
+		Intent i = new Intent(getApplicationContext(), Supplierchatbox.class);
+		startActivity(i);
 	}
-	public void addnew(View v)
-	{
-		
-			Intent i=new Intent(this,Addnewaccessory.class);
-			startActivity(i);
-		
-	}
-	public void onBackPressed()
-	{
-	}
-	public void chat(View v)
-	    {
-	    	Intent i = new Intent(getApplicationContext(),Supplierchatbox.class);
-	     	startActivity(i);
-	    }
 }

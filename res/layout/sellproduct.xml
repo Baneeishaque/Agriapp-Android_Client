@@ -13,32 +13,13 @@
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        
         android:layout_marginTop="54dp"
         android:text="Product Name:" />
-
-    <EditText
-        android:id="@+id/cost"
-        android:layout_width="152dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignRight="@+id/name"
-        android:layout_toRightOf="@+id/txt_title"
-        android:ems="10" />
-
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="158dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/txt_name"
-        android:layout_toRightOf="@+id/txt_title"
-        android:ems="10" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txt_title"
         android:layout_below="@+id/txt_name"
         android:layout_marginTop="31dp"
         android:text="Unit Cost:" />
@@ -56,37 +37,42 @@
         android:id="@+id/office"
         android:layout_width="119dp"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txt_content"
         android:layout_alignBottom="@+id/txt_content"
-        android:layout_alignRight="@+id/cost"
-        android:layout_toRightOf="@+id/txt_title"
+        android:layout_alignLeft="@+id/cost"
+        android:layout_alignParentRight="true"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="158dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txt_name"
+        android:layout_alignBottom="@+id/txt_name"
+        android:layout_alignParentRight="true"
         android:ems="10" />
 
-    <TextView
-        android:id="@+id/txt_title"
-        android:layout_width="119dp"
+    <EditText
+        android:id="@+id/cost"
+        android:layout_width="152dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/img1"
-        android:layout_alignRight="@+id/txt_content"
-        android:layout_marginBottom="14dp"
-        android:text="Add Picture Here:" />
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignParentRight="true"
+        android:ems="10" />
 
     <Button
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="33dp"
         android:layout_alignRight="@+id/office"
-        android:layout_below="@+id/img1"
-        android:layout_marginTop="34dp"
+        android:layout_below="@+id/office"
+        android:layout_marginTop="30dp"
         android:onClick="save"
         android:text="Save" />
-
-    <ImageView
-        android:id="@+id/img1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/office"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:src="@drawable/ic_launcher" />
 
 </RelativeLayout>

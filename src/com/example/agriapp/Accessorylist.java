@@ -14,7 +14,6 @@ import org.json.JSONException;
 
 import com.example.agriapp.modals.Fertilizer_Modal;
 import com.example.agriapp.modals.Machine_Modal;
-import com.example.agriapp.modals.Notification_Modal;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -27,10 +26,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class Accessorylist extends Activity {
 
