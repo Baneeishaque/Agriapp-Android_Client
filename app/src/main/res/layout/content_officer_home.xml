@@ -1,0 +1,41 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Officer">
+
+    <Button
+        android:id="@+id/button_add_cop"
+        android:layout_width="191dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="22dp"
+        android:text="Add Crop"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_add_notification" />
+
+    <Button
+        android:id="@+id/button_articles"
+        android:layout_width="189dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="19dp"
+        android:text="Articles"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_add_cop" />
+
+    <Button
+        android:id="@+id/button_add_notification"
+        android:layout_width="192dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="102dp"
+        android:text="Add Notification"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintTop_creator="1" />
+
+</android.support.constraint.ConstraintLayout>
